@@ -1,10 +1,10 @@
 package es.grise.upm.profundizacion.subscriptionService;
 
-public class User {
+public interface  User {
 	
 	Delivery delivery = null;
 
-	public String getEmail() { return null;};
-	public Delivery getDelivery() {return null;};
+	public String getEmail();
+	public Delivery getDelivery();
 	
 }
