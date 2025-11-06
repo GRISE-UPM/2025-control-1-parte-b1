@@ -44,7 +44,7 @@ public class SubscriptionServiceTest {
 
     //DL - Comprueba si lanza mensaje cuando un usuario que tiene email y delivery LOCAL
     @Test
-    public void localUserWithoutEmailTest(){
+    public void localUserWithEmailTest(){
         User u1 = Mockito.mock(User.class);
         Mockito.when(u1.getEmail()).thenReturn("user@test.com");
         Mockito.when(u1.getDelivery()).thenReturn(Delivery.LOCAL);
