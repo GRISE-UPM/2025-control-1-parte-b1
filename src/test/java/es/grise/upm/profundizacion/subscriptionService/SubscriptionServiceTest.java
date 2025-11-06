@@ -42,7 +42,7 @@ public class SubscriptionServiceTest {
         assertThrows(ExistingUserException.class, () -> {subscribers.addSubscriber(u1);});
     }
 
-    //DL - Comprueba si lanza mensaje cuando un usuario tiene email y delivery local
+    //DL - Comprueba si lanza mensaje cuando un usuario que tiene email y delivery LOCAL
     @Test
     public void localUserWithoutEmailTest(){
         User u1 = Mockito.mock(User.class);
@@ -55,7 +55,6 @@ public class SubscriptionServiceTest {
     //DL - Comprueba que los usuarios se pueden añadir suscribir correctamente
     @Test
     public void userSuscribeCorrect() throws NullUserException, ExistingUserException, LocalUserDoesNotHaveNullEmailException{
-        final Integer SUBSCRIBERSIZE = 2;
         User u1 = Mockito.mock(User.class);
         Mockito.when(u1.getEmail()).thenReturn(null);
         Mockito.when(u1.getDelivery()).thenReturn(Delivery.LOCAL);
@@ -67,6 +66,6 @@ public class SubscriptionServiceTest {
         subscribers.addSubscriber(u1);
         subscribers.addSubscriber(u2);
 
-        assertEquals(SUBSCRIBERSIZE, subscribers.getSubscribers().size());
+        assertTrue(subscribers.getSubscribers().contains(u1) && subscribers.getSubscribers().contains(u2));
     }
 }
