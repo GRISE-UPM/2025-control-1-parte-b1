@@ -42,7 +42,12 @@ public class SubscriptionService {
 	/*
 	 * Other setters & getters
 	 */
-	public Collection <User> getSubscribers() {
+
+    public void setSubscribers(Collection<User> subscribers) {
+        this.subscribers = subscribers;
+    }
+
+    public Collection <User> getSubscribers() {
 		
 		return subscribers;
 		
